@@ -1,5 +1,3 @@
-import java.util.LinkedList;
-
 class Solution {
     public ListNode mergeTwoLists(ListNode node1, ListNode node2) {
 
