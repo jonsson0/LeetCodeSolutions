@@ -35,12 +35,24 @@
 # Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 
-
-
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        
+    def twoSum(self, nums, target):        
+        hashMap = {}
+
+        for num in nums:
+            checkNum = target-num
+            
+            if checkNum in hashMap:
+                return [num, checkNum]
+            hashMap[num] = num
+            
+        return []
+            
+
+s = Solution()
+
+print(s.twoSum([2,7,11,15], 9))
+
 
 
 
