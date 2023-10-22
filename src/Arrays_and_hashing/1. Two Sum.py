@@ -39,13 +39,13 @@ class Solution:
     def twoSum(self, nums, target):        
         hashMap = {}
 
-        for num in nums:
-            checkNum = target-num
-            
-            if checkNum in hashMap:
-                return [num, checkNum]
-            hashMap[num] = num
-            
+     
+
+        for i in range(len(nums)):
+            partnerNum = target-nums[i]
+            if partnerNum in hashMap:
+                return [hashMap[partnerNum], i]
+            hashMap[nums[i]] = i        
         return []
             
 
