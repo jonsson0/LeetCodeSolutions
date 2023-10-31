@@ -36,89 +36,34 @@
 #     -1000 <= target <= 1000
 #     The tests are generated such that there is exactly one solution.
 
-
+# https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
 # Medium
 
 
 
+from typing import List
+
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         
+        last = len(numbers)-1
+        counter = 0
 
+        while(True):
+           
+            a = numbers[counter]
+            b = numbers[last]
 
+            if a+b == target:
+                return [counter+1, last+1]
 
+            if a + b > target:
+               last = last-1
+            elif a+b < target:
+                counter = counter+1
+                
+s = Solution()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# This problem is an extension to Two Sum problem. In the two-sum problem, the input array is unsorted and hence we have to use a hashmap to solve the problem in O(n) time. But that completely changes, once the input is sorted.
-# The algorithm is:
-
-#     Initialize two pointers i and j which points first and last element respectively.
-#     Add elements pointed by i and j and then compare with target.
-#     If target is smaller, it means you have added a larger element and it needs to be cut off. So we decrement j.
-#     If target is larger, it means you have added a smaller value and we need to pick next big value. So we increment 'i`.
-#     We repeat 2. and 3. until i>=j or a match is found.
-
-# class Solution:
-#     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-#         i = 0
-#         j = len(numbers) -1
-        
-#         while i<j:
-#             s = numbers[i] + numbers[j]
-#             if s == target:
-#                 return [i + 1 , j + 1]
-            
-#             if s > target:
-#                 j-=1
-#             else:
-#                i+=1 
-        
-#         return []
-
-# Al_Dan pointed out that the solution can be made a bit more concise as the problem description states the following constraint:
-
-#     The tests are generated such that there is exactly one solution.
-
-# So instead of i<j check, we can do numbers[i] + numbers[j]!=target.
-
-# class Solution:
-#     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-#         i = 0
-#         j = len(numbers) -1
-        
-#         while numbers[i] + numbers[j]!=target:
-#             s = numbers[i] + numbers[j]        
-#             if s > target:
-#                 j-=1
-#             else:
-#                i+=1 
-        
-#         return [i + 1 , j + 1]
-
-# Time - O(n)
-# Space - O(1)
+print(s.twoSum([2,3,4], 6))
