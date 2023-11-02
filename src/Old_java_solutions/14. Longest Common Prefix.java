@@ -1,3 +1,5 @@
+package Old_java_solutions;
+
 import java.util.Arrays;
 
 class Solution {
