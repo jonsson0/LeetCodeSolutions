@@ -1,3 +1,5 @@
+package Old_java_solutions;
+
 class Solution {
     public int removeDuplicates(int[] nums) {
 
