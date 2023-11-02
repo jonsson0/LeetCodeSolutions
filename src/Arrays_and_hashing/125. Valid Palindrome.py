@@ -1,4 +1,7 @@
-# A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+# A phrase is a palindrome if, after converting all uppercase letters into lowercase letters
+# and removing all non-alphanumeric characters, 
+# it reads the same forward and backward. 
+# Alphanumeric characters include letters and numbers.
 
 # Given a string s, return true if it is a palindrome, or false otherwise.
 
@@ -31,12 +34,31 @@
 #     s consists only of printable ASCII characters.
 
 
-
+import re
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        
 
+        s = s.lower()
+        s = re.sub(r"[^a-z0-9]", "", s)
+        print(s)
+        
+        s2 = reversed(s)
+
+        s2 = "".join(s2)
+        
+        if s == s2: 
+            return True
+        else: 
+            return False
+
+
+
+        
+        
+s = Solution()
+
+s.isPalindrome("HEj123#")
 
 
 
